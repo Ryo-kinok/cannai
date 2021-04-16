@@ -1,12 +1,155 @@
 Metadata-Version: 2.1
 Name: cannai
-Version: 0.2
+Version: 0.2.1
 Summary: data visualization for machine learning
 Home-page: UNKNOWN
 Author: Ryo Kinoshita
 Author-email: Rkinoshi55@gmail.com
 License: MIT
 Description: # **Cannai**
+        日本語での説明は英語版の下にあります
+        
+        ## **Overview**
+        This library make many graphs, for comparing trained machine-learning models.
+        We assume for using this in google colab.
+        
+        ## **Description**
+        This library saves trained model, and you can get output when you want to.
+        There is three steps: making manegement library, saving trained model, print graphs.
+        Either of step can be solved in one code.
+        
+        ## **How to use**
+        
+        You can install this library by using:
+        
+        ```python
+        !pip install cannai
+        ```
+        
+        
+        If you are using colab, other library, used in this library, will be installed automatically.
+        
+        **making management library**
+        
+        ```python
+        import cannai
+        Cnai = cannai.Cmodel(base_dir,binary_class = True)
+        ```
+        
+        Make management library from imported library.
+        
+        When making library, you can set save directory (saving models and data),
+        and set this library uses binary_classification models(by binary_class).
+        
+        
+        ```python
+        Cnai.set_input(test_df)
+        Cnai.set_answer(test_df_ans)
+        ```
+        
+        Set the test data into management library,
+        use "set_input" for setting explanation variable,
+        and use "set_answer" for objective variable.
+        Argument must be dataframe or series.
+        
+        **saving trained model**
+        
+        ```python
+        xgbst = xgb.train(xgb_params,dtrain,)
+        Cnai.add_model(xgbst,"xgb")
+        ```
+        
+        You can add trained model into library by using "add_model".
+        This example means training xgboost model and setting into library.
+        This model named "xgb", because model name:"xgb" is inputted with model.
+        (If you have not inputted model name, name will be set automatically.)
+        
+        **print graphs**
+        
+        ```python
+        from cannai.model_compare.multiclass import multiclass_bar
+        multiclass_bar(Cnai,[1,2,3] ,0,["binary_accuracy","binary_cross_entropy"])
+        ```
+        
+        When you want to show graph, call each function using cannai.model_compare,
+        Set management library when calling function.
+        
+        This example means calling "multiclass_bar" function.
+        
+        ## **Example**
+        
+        ## **Functions**
+        
+        ### **multiclass:**
+        
+        word:　
+        
+          model id: each model has id 0,1,2,3,... 
+          model name: The name you set in "saving trained model"
+        
+        **multiclass_bar:**
+        
+        ```python
+        multiclass_bar(C_mod, key_list ,target_line, explanatory_line_list)
+        ```
+        
+        Show multiple performance index with bar-graph
+        
+        arguments:
+        　1st:management library　
+        　2nd:list of model id(int) or model name(str)
+        　3rd:label(str) or line-id(int) of objective variable
+        　4th:performance index
+        　
+        **multiclass_scatter:**
+        
+        ```python
+        multiclass_scatter(C_mod, key_list ,0, ['LotArea', 'OverallQual'])
+        ```
+        
+        For each explanation variable, show scatter plot with objective variable.
+        
+        arguments:
+        　1st:management library　
+        　2nd:list of model id(int) or model name(str)
+        　3rd:label(str) or line-id(int) of objective variable
+        　4th:label(str) or line-id(int) of explanation variable
+        
+        **multiclass_matrix:**
+        
+        ```python
+        multiclass_matrix(C_mod, key_list )
+        ```
+        
+        Show matrix graph of objective variable and explanation variable
+        
+        arguments:
+        　1st:management library　
+        　2nd:list of model id(int) or model name(str)
+        
+        **multiclass_rank:**
+        
+        ```python
+        multiclass_rank(C_mod, key_list, target_line ,score_type = "abs", comvert="default", show_range="top50")
+        ```
+        
+        Show sorted bar graph of error score. 
+        
+        arguments:
+        　1st:management library　
+        　2nd:list of model id(int) or model name(str)
+        　3rd:label(str) or line-id(int) of objective variable
+        　score_type:type of score : "abs" is absolute of absolute error, "rel"  is absolute of relative error
+        　comvert: if you input "log", graph will be logarithmic graph. 
+        　show_range:  "topX" shows top X datas, "botX" shows bottom X datas.
+        　
+        
+        
+        ## **Notice**
+        Variation of graph will be added in near future.
+        (Please give me any advise)
+        
+        
         
         ## **Overview**
         機械学習用の可視化ライブラリです。
@@ -72,6 +215,8 @@ Description: # **Cannai**
         
         上のソースコードは、 multiclass内にあるmulticlass_bar関数を呼び出し実行しています。
         
+        ## **Example**
+        
         ## **Functions**
         
         ### **multiclass:**
@@ -106,7 +251,7 @@ Description: # **Cannai**
         　第一引数:cannaiライブラリ　　
         　第二引数:モデルid(int) または モデル名(str)のリスト
         　第三引数:目的変数のラベル(str) または 列の位置(int)
-        　第四引数:x軸に用いる説明変数　
+        　第四引数:説明変数のラベル(str) または 列の位置(int)
         
         **multiclass_matrix:**
         
