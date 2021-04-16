@@ -68,8 +68,6 @@ Set management library when calling function.
 
 This example means calling "multiclass_bar" function.
 
-## **Example**
-
 ## **Functions**
 
 ### **multiclass:**
@@ -80,6 +78,8 @@ word:　
   model name: The name you set in "saving trained model"
 
 **multiclass_bar:**
+
+<img width="414" alt="multiclass_bar" src="https://user-images.githubusercontent.com/81252378/114963734-57d1e580-9ea8-11eb-901d-e3cab5e10f71.PNG">
 
 ```python
 multiclass_bar(C_mod, key_list ,target_line, explanatory_line_list)
@@ -95,6 +95,8 @@ arguments:
 　
 **multiclass_scatter:**
 
+<img width="415" alt="multiclass_scatter" src="https://user-images.githubusercontent.com/81252378/114963739-59031280-9ea8-11eb-81c9-fcb6224b02b0.PNG">
+
 ```python
 multiclass_scatter(C_mod, key_list ,0, ['LotArea', 'OverallQual'])
 ```
@@ -109,6 +111,8 @@ arguments:
 
 **multiclass_matrix:**
 
+<img width="424" alt="multiclass_matrix" src="https://user-images.githubusercontent.com/81252378/114963736-586a7c00-9ea8-11eb-8505-b91d7b023c69.PNG">
+
 ```python
 multiclass_matrix(C_mod, key_list )
 ```
@@ -120,6 +124,8 @@ arguments:
 　2nd:list of model id(int) or model name(str)
 
 **multiclass_rank:**
+
+<img width="393" alt="multiclass_rank" src="https://user-images.githubusercontent.com/81252378/114963738-59031280-9ea8-11eb-9e43-98dd379d94b8.PNG">
 
 ```python
 multiclass_rank(C_mod, key_list, target_line ,score_type = "abs", comvert="default", show_range="top50")
@@ -207,8 +213,6 @@ multiclass_bar(Cnai,[1,2,3] ,0,["binary_accuracy","binary_cross_entropy"])
 
 上のソースコードは、 multiclass内にあるmulticlass_bar関数を呼び出し実行しています。
 
-## **Example**
-
 ## **Functions**
 
 ### **multiclass:**
@@ -218,6 +222,8 @@ multiclass_bar(Cnai,[1,2,3] ,0,["binary_accuracy","binary_cross_entropy"])
 　モデル名:「学習済みモデルの格納」で指定したモデル名です。
 
 **multiclass_bar:**
+
+<img width="414" alt="multiclass_bar" src="https://user-images.githubusercontent.com/81252378/114963734-57d1e580-9ea8-11eb-901d-e3cab5e10f71.PNG">
 
 ```python
 multiclass_bar(C_mod, key_list ,target_line, explanatory_line_list)
@@ -233,6 +239,8 @@ multiclass_bar(C_mod, key_list ,target_line, explanatory_line_list)
 　
 **multiclass_scatter:**
 
+<img width="415" alt="multiclass_scatter" src="https://user-images.githubusercontent.com/81252378/114963739-59031280-9ea8-11eb-81c9-fcb6224b02b0.PNG">
+
 ```python
 multiclass_scatter(C_mod, key_list ,0, ['LotArea', 'OverallQual'])
 ```
@@ -247,6 +255,8 @@ multiclass_scatter(C_mod, key_list ,0, ['LotArea', 'OverallQual'])
 
 **multiclass_matrix:**
 
+<img width="424" alt="multiclass_matrix" src="https://user-images.githubusercontent.com/81252378/114963736-586a7c00-9ea8-11eb-8505-b91d7b023c69.PNG">
+
 ```python
 multiclass_matrix(C_mod, key_list )
 ```
@@ -258,6 +268,8 @@ multiclass_matrix(C_mod, key_list )
 　第二引数:モデルid(int) または モデル名(str)のリスト
 
 **multiclass_rank:**
+
+<img width="393" alt="multiclass_rank" src="https://user-images.githubusercontent.com/81252378/114963738-59031280-9ea8-11eb-9e43-98dd379d94b8.PNG">
 
 ```python
 multiclass_rank(C_mod, key_list, target_line ,score_type = "abs", comvert="default", show_range="top50")
