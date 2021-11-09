@@ -69,6 +69,12 @@ multiclass_bar(Cnai,[1,2,3] ,0,["binary_accuracy","binary_cross_entropy"])
 
 上のソースコードは、 multiclass内にあるmulticlass_bar関数を呼び出し実行しています。
 
+```python
+Cnai.multiclass.bar([1,2,3] ,0,["binary_accuracy","binary_cross_entropy"])
+```
+
+Cannaiオブジェクトにmulticlass."関数名"で関数を呼び出すことも可能です
+
 ## **Functions**
 
 ### **multiclass:**

@@ -50,6 +50,11 @@ use "set_input" for setting explanation variable,
 and use "set_answer" for objective variable.
 Argument must be dataframe or series.
 
+```python
+Cnai.multiclass.bar([1,2,3] ,0,["binary_accuracy","binary_cross_entropy"])
+```
+You can call each function by adding words multiclass."function name" to cannai model.
+
 **saving trained model**
 
 ```python
